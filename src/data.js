@@ -7,6 +7,7 @@ import image6 from "./assets/images/image_p6_1.jpeg";
 import image7 from "./assets/images/image_p7_1.jpeg";
 import image8 from "./assets/images/image_p8_1.jpeg";
 import image9 from "./assets/images/image_p9_1.jpeg";
+import jackPhoto from "../DSC_2753.JPG";
 
 export const CONTACT = {
   whatsapp: "254706906566",
@@ -183,6 +184,7 @@ export const DIRECTORS = [
       "Stakeholder & Contractor Liaison",
       "Team Leadership",
     ],
+    image: jackPhoto,
     qualifications: [
       "BTech Civil Engineering — Technical University of Kenya (2017)",
       "OSHA 30-Hour Construction Industry Outreach Training",

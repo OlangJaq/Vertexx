@@ -221,7 +221,13 @@ export default function App() {
 
           <div className="director-panel">
             <div className="director-card">
-              <div className="avatar">{currentDirector.initials}</div>
+              <div className="avatar">
+                {currentDirector.image ? (
+                  <img src={currentDirector.image} alt={currentDirector.name} />
+                ) : (
+                  currentDirector.initials
+                )}
+              </div>
               <h4>{currentDirector.name}</h4>
               <p className="director-role">{currentDirector.role}</p>
               <div>
