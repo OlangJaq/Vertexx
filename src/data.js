@@ -166,7 +166,7 @@ export const PROJECTS = [
 export const DIRECTORS = [
   {
     id: 1,
-    name: "Jack Olang'",
+    name: "ENG. Jack Olang'",
     role: "Director — Construction Management & Structural Design",
     initials: "JO",
     bio: "Jack is an experienced Building Technician and Construction Professional with over 9 years of hands-on experience across residential, commercial, and infrastructure projects in Kenya. He has served in senior roles spanning Clerk of Works, Projects Engineer, and Site Engineer — delivering projects from feasibility through to completion. Currently providing senior-level site supervision on the Nakuru County Aggregation and Industrial Parks (CAIP) Project at Egerton University, Jack brings rigorous quality control, HSE compliance, and technical reporting to every engagement.",
@@ -193,7 +193,7 @@ export const DIRECTORS = [
   },
   {
     id: 2,
-    name: "Desmond Ojala Abwao",
+    name: "ENG. Desmond Ojala Abwao",
     role: "Director — Civil Engineering & Project Delivery",
     initials: "DO",
     bio: "Desmond is a results-driven civil engineer with hands-on experience in construction supervision, site coordination, and low-cost building technologies. He has delivered technical oversight across projects for government and infrastructure clients, including Kenya Wildlife Service, KeNHA APEC Consortium, NCA, and the Ministry of Transport. At Vertex-Delta, he brings practical expertise in quality assurance, contractor management, and site compliance to help keep projects on schedule and on budget.",
@@ -217,7 +217,7 @@ export const DIRECTORS = [
   },
   {
     id: 3,
-    name: "Abuya Zacharia Nyapeni",
+    name: "Arch. Abuya Zacharia Nyapeni",
     role: "Director — Architecture & Design",
     initials: "AZ",
     bio: "Abuya is a registered architect with a strong foundation in sustainable architectural design and creative building solutions. He holds degrees in Architecture and Architectural Studies from the University of Nairobi and is registered with BORAQS as a professional architect. Abuya brings experience in residential, institutional, and landscape design, supported by digital design proficiency and a disciplined approach to project delivery.",
@@ -253,17 +253,17 @@ export const TESTIMONIALS = [
     id: 2,
     quote:
       "Professional, knowledgeable, and easy to work with. They understood our brief from day one and translated it into a design that perfectly suits our family's needs. We highly recommend them.",
-    client: "Client Name",
-    project: "Project Name, Location",
-    initials: "CN",
+    client: "John Ochola",
+    project: "4-Bedroom Duplexes, Karen, Nairobi County",
+    initials: "JO",
   },
   {
     id: 3,
     quote:
       "The quality of their structural calculations and compliance documentation gave us full confidence throughout the approvals process. A team that truly understands both design and engineering.",
-    client: "Client Name",
-    project: "Project Name, Location",
-    initials: "CN",
+    client: "Edna Sharon",
+    project: "Residential Appartments, Ngoigwa, Thika",
+    initials: "ES",
   },
   {
     id: 4,
