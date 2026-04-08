@@ -216,8 +216,8 @@ const TESTIMONIALS = [
     quote:
       "Professional, knowledgeable, and easy to work with. They understood our brief from day one and translated it into a design that perfectly suits our family's needs. We highly recommend them.",
     client: "Client Name",
-    project: "Project Name, Location",
-    initials: "CN",
+    project: "$4Bed Maisonate, Ruiru",
+    initials: "John Ochola",
   },
   {
     id: 3,
