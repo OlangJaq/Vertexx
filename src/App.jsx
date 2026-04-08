@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { CONTACT, DIRECTORS, PROJECTS, TESTIMONIALS, typeIcons, statusColors } from "./data";
+import logo from '../logo2.png';
 
 export default function App() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -32,11 +33,7 @@ export default function App() {
       <header className="site-header">
         <div className="header-inner">
           <div className="brand">
-            <span className="brand-mark">VΔ</span>
-            <div>
-              <h1>Vertex-Delta Group LTD</h1>
-              <p>Design · Build · Deliver</p>
-            </div>
+            <img src={logo} alt="Vertex-Delta Group LTD" className="brand-logo" />
           </div>
           <nav className="site-nav" aria-label="Primary navigation">
             {[

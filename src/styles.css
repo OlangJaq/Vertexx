@@ -110,6 +110,11 @@ a {
   color: var(--mid);
 }
 
+.brand-logo {
+  height: 36px;
+  width: auto;
+}
+
 .site-nav {
   display: flex;
   gap: 24px;
