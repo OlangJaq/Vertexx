@@ -22,10 +22,17 @@ export default function HomePage() {
     [activeFilter]
   );
 
-  const currentDirector = DIRECTORS[activeDirector];
-  const completedCount = PROJECTS.filter((project) => project.status === "Completed").length;
-  const sectorCount = new Set(PROJECTS.map((project) => project.type)).size;
-  const heroImages = PROJECTS.slice(0, 9);
+  const completedCount = useMemo(
+    () => PROJECTS.filter((project) => project.status === "Completed").length,
+    []
+  );
+
+  const sectorCount = useMemo(
+    () => new Set(PROJECTS.map((project) => project.type)).size,
+    []
+  );
+
+  const heroImages = useMemo(() => PROJECTS.slice(0, 9), []);
 
   return (
     <>
