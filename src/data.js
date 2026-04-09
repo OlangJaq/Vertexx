@@ -42,7 +42,7 @@ export const PROJECTS = [
       materials: ["Natural stone cladding", "Steel casement windows", "Ceramic tiles"],
     },
     amenities: ["Open-plan living", "Master suite", "Guest bedroom", "Landscaped grounds"],
-    images: ["image_p2_1.jpeg"],
+    images: [image1],
   },
   {
     id: 2,
@@ -68,7 +68,7 @@ export const PROJECTS = [
       gazebo: "Yes",
     },
     amenities: ["Carport", "Gazebo", "Open-plan living", "Breakfast area", "Landscaped grounds"],
-    images: ["image_p2_2.jpeg"],
+    images: [image2],
   },
   {
     id: 3,
@@ -94,7 +94,7 @@ export const PROJECTS = [
       solarCapacity: "10kWp",
     },
     amenities: ["Private balconies", "Parking", "Water tanks", "Solar panels", "Communal rooftop"],
-    images: ["image_p3_1.jpeg"],
+    images: [image3],
   },
   {
     id: 4,
@@ -119,7 +119,7 @@ export const PROJECTS = [
       storeys: 3,
     },
     amenities: ["Modern kitchen", "Open-plan living", "Master suite", "Multiple balconies"],
-    images: ["image_p4_1.jpeg"],
+    images: [image4],
   },
   {
     id: 5,
@@ -145,7 +145,7 @@ export const PROJECTS = [
       specialRooms: ["Theatre room", "Home office"],
     },
     amenities: ["Theatre room", "Home office", "Master suite", "Guest bedroom", "Open-plan living"],
-    images: ["image_p5_1.jpeg"],
+    images: [image5],
   },
   {
     id: 6,
@@ -169,7 +169,7 @@ export const PROJECTS = [
       parkingSpaces: "20 covered",
     },
     amenities: ["Swimming pool", "Covered parking", "Lawn areas", "Planting borders", "Irrigation system"],
-    images: ["image_p6_1.jpeg"],
+    images: [image6],
   },
   {
     id: 7,
@@ -194,7 +194,7 @@ export const PROJECTS = [
       specialFeatures: ["Sunken lounge", "Island kitchen", "Laundry wing"],
     },
     amenities: ["Island kitchen", "Sunken lounge", "Master suite", "Walk-in closet", "Laundry wing"],
-    images: ["image_p7_1.jpeg"],
+    images: [image7],
   },
   {
     id: 8,
@@ -218,7 +218,7 @@ export const PROJECTS = [
       groundFloor: "Commercial spaces",
     },
     amenities: ["Multiple unit types", "Natural ventilation", "Commercial spaces"],
-    images: ["image_p8_1.jpeg"],
+    images: [image8],
   },
   {
     id: 9,
@@ -241,7 +241,7 @@ export const PROJECTS = [
       displayShelving: "Yes",
     },
     amenities: ["Reception desk", "Display areas", "Office spaces", "Showroom layout"],
-    images: ["image_p9_1.jpeg"],
+    images: [image9],
   },
   {
     id: 10,

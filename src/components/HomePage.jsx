@@ -5,7 +5,6 @@ import logo from '../assets/images/logo2.png';
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [selectedProject, setSelectedProject] = useState(null);
   const [activeDirector, setActiveDirector] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
