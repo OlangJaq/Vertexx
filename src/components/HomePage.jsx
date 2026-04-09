@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { CONTACT, DIRECTORS, PROJECTS, TESTIMONIALS, typeIcons, statusColors } from "../data";
 import { Link } from "react-router-dom";
-import logo from '../../logo2.png';
+import logo from '../assets/images/logo2.png';
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState("All");

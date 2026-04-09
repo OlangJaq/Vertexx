@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { PROJECTS, CONTACT, typeIcons, statusColors } from "../data";
 import ImageSlideshow from "./ImageSlideshow";
 import PaymentModal from "./PaymentModal";
-import logo from "../../logo2.png";
+import logo from "../assets/images/logo2.png";
 
 export default function ProjectPage() {
   const { slug } = useParams();
