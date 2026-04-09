@@ -1,27 +1,59 @@
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import ProjectPage from "./components/ProjectPage";
+import { useMemo, useState } from "react";
+import { CONTACT, DIRECTORS, PROJECTS, TESTIMONIALS, typeIcons, statusColors } from "../data";
+import { Link } from "react-router-dom";
+import logo from '../../logo2.png';
 
-export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/projects/:slug" element={<ProjectPage />} />
-    </Routes>
-  );
-}
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import ProjectPage from "./components/ProjectPage";
+export default function HomePage() {
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [activeDirector, setActiveDirector] = useState(0);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
-export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/projects/:slug" element={<ProjectPage />} />
-    </Routes>
+  const projectTypes = useMemo(
+    () => ["All", ...new Set(PROJECTS.map((project) => project.type))],
+    []
   );
-}
+
+  const filteredProjects = useMemo(
+    () =>
+      activeFilter === "All"
+        ? PROJECTS
+        : PROJECTS.filter((project) => project.type === activeFilter),
+    [activeFilter]
+  );
+
+  const currentDirector = DIRECTORS[activeDirector];
+  const completedCount = PROJECTS.filter((project) => project.status === "Completed").length;
+  const sectorCount = new Set(PROJECTS.map((project) => project.type)).size;
+  const heroImages = PROJECTS.slice(0, 9);
+
+  return (
+    <>
+      <div className="noise-overlay" />
+
+      <header className="site-header">
+        <div className="header-inner">
+          <div className="brand">
+            <Link to="/">
+              <img src={logo} alt="Vertex-Delta Group LTD" className="brand-logo" />
+            </Link>
+          </div>
+          <nav className="site-nav" aria-label="Primary navigation">
+            {[
+              { label: "Projects", href: "#projects" },
+              { label: "Team", href: "#team" },
+              { label: "Testimonials", href: "#testimonials" },
+              { label: "Contact", href: "#contact" },
+            ].map((item) => (
+              <a key={item.label} href={item.href} className="nav-link">
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      <main>
         <section className="hero-section">
           <div className="hero-copy">
             <span className="eyebrow">Based in Kenya · Est. 2026</span>
@@ -99,41 +131,40 @@ export default function App() {
 
           <div className="projects-grid">
             {filteredProjects.map((project) => (
-              <article
+              <Link
                 key={project.id}
+                to={`/projects/${project.slug}`}
                 className="project-card"
-                onClick={() => setSelectedProject(project)}
-                tabIndex={0}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") setSelectedProject(project);
-                }}
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
-                <div className="project-image">
-                  {project.image ? (
-                    <img src={project.image} alt={project.title} />
-                  ) : (
-                    <div className="project-placeholder">
-                      <span>{typeIcons[project.type] || "🏗️"}</span>
-                      <p>Add image URL in source</p>
-                    </div>
-                  )}
-                  <span className="project-type">
-                    {typeIcons[project.type] || "🏗️"} {project.type}
-                  </span>
-                </div>
-                <div className="project-content">
-                  <div className="project-meta">
-                    <span>{project.year}</span>
-                    <span className="project-status" style={statusColors[project.status]}>
-                      {project.status}
+                <article>
+                  <div className="project-image">
+                    {project.image ? (
+                      <img src={project.image} alt={project.title} />
+                    ) : (
+                      <div className="project-placeholder">
+                        <span>{typeIcons[project.type] || "🏗️"}</span>
+                        <p>Add image URL in source</p>
+                      </div>
+                    )}
+                    <span className="project-type">
+                      {typeIcons[project.type] || "🏗️"} {project.type}
                     </span>
                   </div>
-                  <h4>{project.title}</h4>
-                  <p className="project-location">📍 {project.location}</p>
-                  <p className="project-summary">{project.description}</p>
-                  <span className="project-action">View details →</span>
-                </div>
-              </article>
+                  <div className="project-content">
+                    <div className="project-meta">
+                      <span>{project.year}</span>
+                      <span className="project-status" style={statusColors[project.status]}>
+                        {project.status}
+                      </span>
+                    </div>
+                    <h4>{project.title}</h4>
+                    <p className="project-location">📍 {project.location}</p>
+                    <p className="project-summary">{project.description}</p>
+                    <span className="project-action">View details →</span>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
         </section>
@@ -164,7 +195,7 @@ export default function App() {
             <div className="accent-card">
               <div className="accent-mark">VΔ</div>
               <p className="accent-quote">
-                “Detail is not the detail. It makes the design.”
+                "Detail is not the detail. It makes the design."
               </p>
             </div>
           </div>
@@ -238,7 +269,7 @@ export default function App() {
             <span className="eyebrow gold">What Clients Say</span>
             <h3>Built on trust.</h3>
             <article className="testimonial-card">
-              <span className="quote-mark">“</span>
+              <span className="quote-mark">"</span>
               <p>{TESTIMONIALS[activeTestimonial].quote}</p>
               <div className="testimonial-author">
                 <div className="testimonial-avatar">{TESTIMONIALS[activeTestimonial].initials}</div>
@@ -314,47 +345,6 @@ export default function App() {
       >
         💬
       </a>
-
-      {selectedProject && (
-        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div className="project-modal" onClick={(event) => event.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedProject(null)} aria-label="Close project details">
-              ✕
-            </button>
-            <div className="modal-image">
-              {selectedProject.image ? (
-                <img src={selectedProject.image} alt={selectedProject.title} />
-              ) : (
-                <div className="project-placeholder modal-placeholder">
-                  <span>{typeIcons[selectedProject.type] || "🏗️"}</span>
-                </div>
-              )}
-            </div>
-            <div className="modal-content">
-              <div className="project-meta">
-                <span>{selectedProject.year}</span>
-                <span className="project-status" style={statusColors[selectedProject.status]}>
-                  {selectedProject.status}
-                </span>
-                <span className="project-type-modal">
-                  {typeIcons[selectedProject.type] || "🏗️"} {selectedProject.type}
-                </span>
-              </div>
-              <h3>{selectedProject.title}</h3>
-              <p className="project-location">📍 {selectedProject.location}</p>
-              <p className="project-summary">{selectedProject.description}</p>
-              <a
-                className="button button-primary"
-                href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20a%20project%20similar%20to%20your%20${encodeURIComponent(selectedProject.title)}.`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                💬 Enquire about this project
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+    </>
   );
 }
