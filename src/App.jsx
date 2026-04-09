@@ -10,64 +10,6 @@ export default function App() {
     </Routes>
   );
 }
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import ProjectPage from "./components/ProjectPage";
-
-export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/projects/:slug" element={<ProjectPage />} />
-    </Routes>
-  );
-}
-        <section className="hero-section">
-          <div className="hero-copy">
-            <span className="eyebrow">Based in Kenya · Est. 2026</span>
-            <h2>
-              Building spaces that <span>endure.</span>
-            </h2>
-            <p>
-              From residential maisonettes to industrial warehouses — precision engineering and considered design on every project.
-            </p>
-            <div className="hero-actions">
-              <a href="#projects" className="button button-primary">
-                View Our Work
-              </a>
-              <a
-                href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.`}
-                target="_blank"
-                rel="noreferrer"
-                className="button button-secondary"
-              >
-                💬 WhatsApp Us
-              </a>
-            </div>
-          </div>
-          <div className="hero-grid">
-            {heroImages.map((project) => (
-              <div key={project.id} className="hero-cell">
-                {project.image ? (
-                  <img src={project.image} alt={project.title} />
-                ) : (
-                  <div className="hero-cell-placeholder">{project.type}</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="stats-row">
-          <article className="stat-card">
-            <h3>{PROJECTS.length}+</h3>
-            <p>Projects</p>
-          </article>
-          <article className="stat-card">
-            <h3>{completedCount}</h3>
-            <p>Completed</p>
-          </article>
-          <article className="stat-card">
             <h3>{sectorCount}</h3>
             <p>Sectors</p>
           </article>
