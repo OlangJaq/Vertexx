@@ -5,10 +5,7 @@ import logo from '../assets/images/logo2.png';
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [activeDirector, setActiveDirector] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-
-  const currentDirector = DIRECTORS[activeDirector] || DIRECTORS[0];
 
   const projectTypes = useMemo(
     () => ["All", ...new Set(PROJECTS.map((project) => project.type))],
@@ -49,13 +46,20 @@ export default function HomePage() {
           <nav className="site-nav" aria-label="Primary navigation">
             {[
               { label: "Projects", href: "#projects" },
-              { label: "Team", href: "#team" },
+              { label: "Services", href: "#services" },
+              { label: "Team", href: "/directors" },
               { label: "Testimonials", href: "#testimonials" },
               { label: "Contact", href: "#contact" },
             ].map((item) => (
-              <a key={item.label} href={item.href} className="nav-link">
-                {item.label}
-              </a>
+              item.href.startsWith('/') ? (
+                <Link key={item.label} to={item.href} className="nav-link">
+                  {item.label}
+                </Link>
+              ) : (
+                <a key={item.label} href={item.href} className="nav-link">
+                  {item.label}
+                </a>
+              )
             ))}
           </nav>
         </div>
@@ -209,65 +213,34 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="team" className="section-block">
+        <section id="services" className="section-block">
           <div className="section-header">
             <div>
-              <span className="eyebrow gold">Our Directors</span>
-              <h3>Meet the leadership team</h3>
-            </div>
-            <div className="filters-row">
-              {DIRECTORS.map((director, index) => (
-                <button
-                  key={director.id}
-                  type="button"
-                  className={`filter-button ${activeDirector === index ? "active" : ""}`}
-                  onClick={() => setActiveDirector(index)}
-                >
-                  {director.name.split(" ")[0]}
-                </button>
-              ))}
+              <span className="eyebrow gold">Our Services</span>
+              <h3>What we offer</h3>
             </div>
           </div>
 
-          <div className="director-panel">
-            <div className="director-card">
-              <div className="avatar">
-                {currentDirector.image ? (
-                  <img src={currentDirector.image} alt={currentDirector.name} />
-                ) : (
-                  currentDirector.initials
-                )}
-              </div>
-              <h4>{currentDirector.name}</h4>
-              <p className="director-role">{currentDirector.role}</p>
-              <div>
-                <p className="section-subtitle">Qualifications</p>
-                <ul className="qualification-list">
-                  {currentDirector.qualifications.map((qualification) => (
-                    <li key={qualification}>{qualification}</li>
-                  ))}
-                </ul>
-              </div>
+          <div className="services-tabs">
+            <div className="service-tab">
+              <h4>Structural Design</h4>
+              <p>Comprehensive structural engineering for residential, commercial, and industrial projects. Compliant with EC2/EC3 standards.</p>
+              <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20structural%20design%20services.`} target="_blank" rel="noreferrer" className="button button-outline">Inquire</a>
             </div>
-            <div className="director-details">
-              <span className="eyebrow gold">Profile</span>
-              <p>{currentDirector.bio}</p>
-              <span className="eyebrow gold">Core Expertise</span>
-              <div className="skill-grid">
-                {currentDirector.skills.map((skill) => (
-                  <span key={skill} className="skill-pill">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <a
-                className="button button-secondary"
-                href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20${encodeURIComponent(currentDirector.name)}%20regarding%20a%20project.`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                💬 Message {currentDirector.name.split(" ")[0]} on WhatsApp
-              </a>
+            <div className="service-tab">
+              <h4>Architectural Plans</h4>
+              <p>Creative architectural design and planning services tailored to your vision and site requirements.</p>
+              <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20architectural%20planning%20services.`} target="_blank" rel="noreferrer" className="button button-outline">Inquire</a>
+            </div>
+            <div className="service-tab">
+              <h4>Site Supervision</h4>
+              <p>Professional site supervision to ensure quality construction and adherence to design specifications.</p>
+              <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20site%20supervision%20services.`} target="_blank" rel="noreferrer" className="button button-outline">Inquire</a>
+            </div>
+            <div className="service-tab">
+              <h4>Quantity Surveying</h4>
+              <p>Accurate cost estimation, procurement, and contract administration for your construction projects.</p>
+              <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20quantity%20surveying%20services.`} target="_blank" rel="noreferrer" className="button button-outline">Inquire</a>
             </div>
           </div>
         </section>
@@ -329,10 +302,10 @@ export default function HomePage() {
               </div>
             </div>
             <div className="contact-card">
-              <span>📍</span>
+              <span>�</span>
               <div>
-                <p>Office</p>
-                <strong>{CONTACT.location}</strong>
+                <p>Contractor Services</p>
+                <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20contractor%20services.`} target="_blank" rel="noreferrer">Inquire Now</a>
               </div>
             </div>
           </div>

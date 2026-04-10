@@ -96,9 +96,7 @@ export default function PaymentModal({ project, onClose }) {
                   type="number"
                   id="amount"
                   value={amount}
-                  onChange={(e) => setAmount(Math.max(1, parseInt(e.target.value) || 50000))}
-                  min="1"
-                  required
+                  disabled
                   className="form-input"
                 />
                 <span className="currency">KES</span>
