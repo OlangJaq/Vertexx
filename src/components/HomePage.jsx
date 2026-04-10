@@ -37,7 +37,7 @@ export default function HomePage() {
     {
       name: "Structural Design",
       description: "Comprehensive structural engineering for residential, commercial, and industrial projects. Compliant with EC2/EC3 standards and NCA regulations.",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop", // Civil engineering structural design
+      image: "https://images.unsplash.com/photo-1503387854665-48275bfe2e4b?w=600&h=400&fit=crop", // Structural engineering design
       features: ["EC2/EC3 Compliance", "Load Calculations", "Foundation Design", "Seismic Analysis"]
     },
     {
