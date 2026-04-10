@@ -37,25 +37,25 @@ export default function HomePage() {
     {
       name: "Structural Design",
       description: "Comprehensive structural engineering for residential, commercial, and industrial projects. Compliant with EC2/EC3 standards and NCA regulations.",
-      image: image1, // Using existing image as placeholder
+      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600&h=400&fit=crop",
       features: ["EC2/EC3 Compliance", "Load Calculations", "Foundation Design", "Seismic Analysis"]
     },
     {
       name: "Architectural Plans",
       description: "Creative architectural design and planning services tailored to your vision and site requirements. From concept to construction drawings.",
-      image: image2,
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop",
       features: ["Concept Design", "Working Drawings", "3D Visualization", "Permit Documentation"]
     },
     {
       name: "Project Management",
       description: "End-to-end project management ensuring timely delivery, budget control, and quality assurance throughout the construction process.",
-      image: image3,
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
       features: ["Schedule Management", "Budget Control", "Quality Assurance", "Stakeholder Coordination"]
     },
     {
       name: "Quantity Surveying",
       description: "Accurate cost estimation, procurement, and contract administration for your construction projects. Maximizing value and minimizing costs.",
-      image: image4,
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
       features: ["Cost Estimation", "Procurement", "Contract Admin", "Value Engineering"]
     }
   ], []);
