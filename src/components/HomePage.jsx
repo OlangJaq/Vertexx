@@ -37,25 +37,25 @@ export default function HomePage() {
     {
       name: "Structural Design",
       description: "Comprehensive structural engineering for residential, commercial, and industrial projects. Compliant with EC2/EC3 standards and NCA regulations.",
-      image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop", // Civil engineering structural design
       features: ["EC2/EC3 Compliance", "Load Calculations", "Foundation Design", "Seismic Analysis"]
     },
     {
       name: "Architectural Plans",
       description: "Creative architectural design and planning services tailored to your vision and site requirements. From concept to construction drawings.",
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=600&h=400&fit=crop", // Architectural plans/blueprints
       features: ["Concept Design", "Working Drawings", "3D Visualization", "Permit Documentation"]
     },
     {
       name: "Project Management",
       description: "End-to-end project management ensuring timely delivery, budget control, and quality assurance throughout the construction process.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop", // Construction project management
       features: ["Schedule Management", "Budget Control", "Quality Assurance", "Stakeholder Coordination"]
     },
     {
       name: "Quantity Surveying",
       description: "Accurate cost estimation, procurement, and contract administration for your construction projects. Maximizing value and minimizing costs.",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&h=400&fit=crop", // Quantity surveying/cost estimation
       features: ["Cost Estimation", "Procurement", "Contract Admin", "Value Engineering"]
     }
   ], []);
