@@ -8,6 +8,8 @@ export default function HomePage() {
   const [activeDirector, setActiveDirector] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
+  const currentDirector = DIRECTORS[activeDirector] || DIRECTORS[0];
+
   const projectTypes = useMemo(
     () => ["All", ...new Set(PROJECTS.map((project) => project.type))],
     []
