@@ -6,6 +6,7 @@ import logo from '../assets/images/logo2.png';
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [activeService, setActiveService] = useState(0);
 
   const projectTypes = useMemo(
     () => ["All", ...new Set(PROJECTS.map((project) => project.type))],
@@ -31,6 +32,33 @@ export default function HomePage() {
   );
 
   const heroImages = useMemo(() => PROJECTS.slice(0, 9), []);
+
+  const services = useMemo(() => [
+    {
+      name: "Structural Design",
+      description: "Comprehensive structural engineering for residential, commercial, and industrial projects. Compliant with EC2/EC3 standards and NCA regulations.",
+      image: image1, // Using existing image as placeholder
+      features: ["EC2/EC3 Compliance", "Load Calculations", "Foundation Design", "Seismic Analysis"]
+    },
+    {
+      name: "Architectural Plans",
+      description: "Creative architectural design and planning services tailored to your vision and site requirements. From concept to construction drawings.",
+      image: image2,
+      features: ["Concept Design", "Working Drawings", "3D Visualization", "Permit Documentation"]
+    },
+    {
+      name: "Project Management",
+      description: "End-to-end project management ensuring timely delivery, budget control, and quality assurance throughout the construction process.",
+      image: image3,
+      features: ["Schedule Management", "Budget Control", "Quality Assurance", "Stakeholder Coordination"]
+    },
+    {
+      name: "Quantity Surveying",
+      description: "Accurate cost estimation, procurement, and contract administration for your construction projects. Maximizing value and minimizing costs.",
+      image: image4,
+      features: ["Cost Estimation", "Procurement", "Contract Admin", "Value Engineering"]
+    }
+  ], []);
 
   return (
     <>
@@ -221,26 +249,43 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="services-tabs">
-            <div className="service-tab">
-              <h4>Structural Design</h4>
-              <p>Comprehensive structural engineering for residential, commercial, and industrial projects. Compliant with EC2/EC3 standards.</p>
-              <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20structural%20design%20services.`} target="_blank" rel="noreferrer" className="button button-outline">Inquire</a>
+          <div className="services-container">
+            <div className="service-tabs">
+              {services.map((service, index) => (
+                <button
+                  key={service.name}
+                  type="button"
+                  className={`service-tab-button ${activeService === index ? "active" : ""}`}
+                  onClick={() => setActiveService(index)}
+                >
+                  {service.name}
+                </button>
+              ))}
             </div>
-            <div className="service-tab">
-              <h4>Architectural Plans</h4>
-              <p>Creative architectural design and planning services tailored to your vision and site requirements.</p>
-              <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20architectural%20planning%20services.`} target="_blank" rel="noreferrer" className="button button-outline">Inquire</a>
-            </div>
-            <div className="service-tab">
-              <h4>Site Supervision</h4>
-              <p>Professional site supervision to ensure quality construction and adherence to design specifications.</p>
-              <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20site%20supervision%20services.`} target="_blank" rel="noreferrer" className="button button-outline">Inquire</a>
-            </div>
-            <div className="service-tab">
-              <h4>Quantity Surveying</h4>
-              <p>Accurate cost estimation, procurement, and contract administration for your construction projects.</p>
-              <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20quantity%20surveying%20services.`} target="_blank" rel="noreferrer" className="button button-outline">Inquire</a>
+
+            <div className="service-content">
+              <div className="service-image">
+                <img src={services[activeService].image} alt={services[activeService].name} />
+              </div>
+              <div className="service-details">
+                <h4>{services[activeService].name}</h4>
+                <p>{services[activeService].description}</p>
+                <div className="service-features">
+                  {services[activeService].features.map((feature) => (
+                    <span key={feature} className="feature-tag">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(services[activeService].name)}%20services.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="button button-primary"
+                >
+                  Inquire About {services[activeService].name}
+                </a>
+              </div>
             </div>
           </div>
         </section>
