@@ -5,7 +5,7 @@ export default function ImageSlideshow({ images = [], title = "Project" }) {
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   // Filter out empty images
-  const validImages = images.filter(img => img && img.trim() !== "");
+  const validImages = images.filter(img => img && typeof img === "string" ? img.trim() !== "" : !!img);
 
   useEffect(() => {
     if (!isAutoPlay || validImages.length === 0) return;

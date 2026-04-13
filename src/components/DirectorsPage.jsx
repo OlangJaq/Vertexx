@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CONTACT, DIRECTORS } from "../data";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo2.png";
+import Header from "./Header";
 
 export default function DirectorsPage() {
   const [activeDirector, setActiveDirector] = useState(0);
@@ -13,19 +13,7 @@ export default function DirectorsPage() {
     <div className="app-root">
       <div className="noise-overlay" />
 
-      <header className="site-header">
-        <div className="header-inner">
-          <div className="brand">
-            <Link to="/">
-              <img src={logo} alt="Vertex-Delta Group LTD" className="brand-logo" />
-            </Link>
-          </div>
-          <nav className="site-nav">
-            <Link to="/" className="nav-link">Portfolio</Link>
-            <a href="#contact" className="nav-link">Contact</a>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <section className="section-block">

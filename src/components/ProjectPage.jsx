@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { PROJECTS, CONTACT, typeIcons, statusColors } from "../data";
 import ImageSlideshow from "./ImageSlideshow";
 import PaymentModal from "./PaymentModal";
-import logo from "../assets/images/logo2.png";
+import Header from "./Header";
 
 export default function ProjectPage() {
   const { slug } = useParams();
@@ -15,15 +15,7 @@ export default function ProjectPage() {
   if (!project) {
     return (
       <div className="app-root">
-        <header className="site-header">
-          <div className="header-inner">
-            <div className="brand">
-              <Link to="/">
-                <img src={logo} alt="Vertex-Delta Group LTD" className="brand-logo" />
-              </Link>
-            </div>
-          </div>
-        </header>
+      <Header />
         <main style={{ padding: "2rem", textAlign: "center" }}>
           <h2>Project not found</h2>
           <p>The project you're looking for doesn't exist.</p>
@@ -43,26 +35,7 @@ export default function ProjectPage() {
     <div className="app-root">
       <div className="noise-overlay" />
 
-      <header className="site-header">
-        <div className="header-inner">
-          <div className="brand">
-            <Link to="/">
-              <img src={logo} alt="Vertex-Delta Group LTD" className="brand-logo" />
-            </Link>
-          </div>
-          <nav className="site-nav">
-            <Link to="/" className="nav-link">
-              Portfolio
-            </Link>
-            <a href="#details" className="nav-link">
-              Details
-            </a>
-            <a href="#contact" className="nav-link">
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <main>
         {/* Hero Slideshow Section */}

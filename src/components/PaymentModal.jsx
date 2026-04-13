@@ -38,43 +38,12 @@ export default function PaymentModal({ project, onClose }) {
     const formatted = validatePhoneNumber();
     if (!formatted) return;
 
-    setStep("processing");
-    setError("");
-
-    try {
-      // Call backend to initiate STK push
-      const response = await fetch("/api/payments/initiate-stk-push", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          phoneNumber: formatted,
-          amount: Math.round(amount),
-          projectId: project.id,
-          projectTitle: project.title,
-          projectSlug: project.slug,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Payment initiation failed");
-      }
-
-      setTransactionRef(data.checkoutRequestId || data.transactionId);
-      setStep("success");
-
-      // Auto-close after 5 seconds
-      setTimeout(() => {
-        onClose();
-      }, 5000);
-    } catch (err) {
-      console.error("Payment error:", err);
-      setError(err.message || "Failed to initiate payment. Please try again.");
-      setStep("error");
-    }
+    // Backend M-Pesa integration coming soon — route to WhatsApp for now
+    const message = encodeURIComponent(
+      `Hello, I'd like to purchase the design files for "${project.title}" (KES ${amount.toLocaleString()}). My M-Pesa number is ${formatted}.`
+    );
+    window.open(`https://wa.me/${CONTACT.whatsapp}?text=${message}`, "_blank");
+    onClose();
   };
 
   return (

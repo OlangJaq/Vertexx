@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { CONTACT, DIRECTORS, PROJECTS, TESTIMONIALS, typeIcons, statusColors } from "../data";
 import { Link } from "react-router-dom";
-import logo from '../assets/images/logo2.png';
+import Header from "./Header";
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -64,34 +64,7 @@ export default function HomePage() {
     <>
       <div className="noise-overlay" />
 
-      <header className="site-header">
-        <div className="header-inner">
-          <div className="brand">
-            <Link to="/">
-              <img src={logo} alt="Vertex-Delta Group LTD" className="brand-logo" />
-            </Link>
-          </div>
-          <nav className="site-nav" aria-label="Primary navigation">
-            {[
-              { label: "Projects", href: "#projects" },
-              { label: "Services", href: "#services" },
-              { label: "Team", href: "/directors" },
-              { label: "Testimonials", href: "#testimonials" },
-              { label: "Contact", href: "#contact" },
-            ].map((item) => (
-              item.href.startsWith('/') ? (
-                <Link key={item.label} to={item.href} className="nav-link">
-                  {item.label}
-                </Link>
-              ) : (
-                <a key={item.label} href={item.href} className="nav-link">
-                  {item.label}
-                </a>
-              )
-            ))}
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <section className="hero-section">
@@ -347,7 +320,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="contact-card">
-              <span>�</span>
+              <span>📍</span>
               <div>
                 <p>Contractor Services</p>
                 <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20contractor%20services.`} target="_blank" rel="noreferrer">Inquire Now</a>
