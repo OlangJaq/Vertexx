@@ -10,8 +10,8 @@ import image9 from "./assets/images/image_p9_1.jpeg";
 import jackPhoto from "./assets/images/DSC_2753.JPG";
 
 export const CONTACT = {
-  whatsapp: "254706906566",
-  whatsappDisplay: "+254 706 906 566",
+  whatsapp: "254739704350",
+  whatsappDisplay: "+254 739 704 350",
   email1: "vertexdeltagroup@gmail.com",
   email2: "vertexdeltagroup@gmail.com",
   location: "Nairobi, Kenya",
