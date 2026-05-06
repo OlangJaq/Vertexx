@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
-import { CONTACT, DIRECTORS, PROJECTS, TESTIMONIALS, typeIcons, statusColors } from "../data";
+import { CONTACT, PROJECTS, TESTIMONIALS, typeIcons, statusColors } from "../data";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import ContactForm from "./ContactForm";
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -94,7 +95,7 @@ export default function HomePage() {
             {heroImages.map((project) => (
               <div key={project.id} className="hero-cell">
                 {project.image ? (
-                  <img src={project.image} alt={project.title} />
+                  <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
                 ) : (
                   <div className="hero-cell-placeholder">{project.type}</div>
                 )}
@@ -153,7 +154,7 @@ export default function HomePage() {
                 <article>
                   <div className="project-image">
                     {project.image ? (
-                      <img src={project.image} alt={project.title} />
+                      <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
                     ) : (
                       <div className="project-placeholder">
                         <span>{typeIcons[project.type] || "🏗️"}</span>
@@ -238,7 +239,7 @@ export default function HomePage() {
 
             <div className="service-content">
               <div className="service-image">
-                <img src={services[activeService].image} alt={services[activeService].name} />
+                <img src={services[activeService].image} alt={services[activeService].name} loading="lazy" decoding="async" />
               </div>
               <div className="service-details">
                 <h4>{services[activeService].name}</h4>
@@ -295,9 +296,11 @@ export default function HomePage() {
         <section id="contact" className="contact-block">
           <div>
             <span className="eyebrow gold">Start a Project</span>
-            <h3>Ready to build? Let's talk about your vision.</h3>
+            <h3>Ready to build? Share your brief and we’ll respond fast.</h3>
           </div>
           <div className="contact-grid">
+            <ContactForm subject="Project quote request" />
+
             <a
               className="contact-card contact-card-primary"
               href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.`}
@@ -317,13 +320,6 @@ export default function HomePage() {
                 <p>Email</p>
                 <a href={`mailto:${CONTACT.email1}`}>{CONTACT.email1}</a>
                 <a href={`mailto:${CONTACT.email2}`}>{CONTACT.email2}</a>
-              </div>
-            </div>
-            <div className="contact-card">
-              <span>📍</span>
-              <div>
-                <p>Contractor Services</p>
-                <a href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20contractor%20services.`} target="_blank" rel="noreferrer">Inquire Now</a>
               </div>
             </div>
           </div>

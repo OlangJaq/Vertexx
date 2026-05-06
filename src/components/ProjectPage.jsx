@@ -70,7 +70,7 @@ export default function ProjectPage() {
                   className="button button-primary"
                   onClick={() => setShowPaymentModal(true)}
                 >
-                  💳 Purchase Design
+                  Request quote
                 </button>
                 <a
                   href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(project.title)}%20project.`}
@@ -172,7 +172,7 @@ export default function ProjectPage() {
                   className="button button-primary full-width"
                   onClick={() => setShowPaymentModal(true)}
                 >
-                  💳 Purchase Design
+                  Request quote
                 </button>
                 <a
                   href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20am%20interested%20in%20your%20${encodeURIComponent(project.title)}%20project.`}
@@ -200,7 +200,7 @@ export default function ProjectPage() {
                 >
                   <div className="related-image">
                     {related.image ? (
-                      <img src={related.image} alt={related.title} />
+                      <img src={related.image} alt={related.title} loading="lazy" decoding="async" />
                     ) : (
                       <div className="project-placeholder">
                         <span>{typeIcons[related.type]}</span>
@@ -218,7 +218,7 @@ export default function ProjectPage() {
         {/* Contact CTA Section */}
         <section id="contact" className="project-contact-cta">
           <h2>Interested in this project?</h2>
-          <p>Get in touch to discuss how we can help bring your vision to life.</p>
+          <p>Request a quote or book a consultation to move your project forward.</p>
           <div className="contact-links">
             <a
               href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20found%20your%20${encodeURIComponent(project.title)}%20project%20impressive.%20Can%20we%20discuss%3F`}
@@ -238,7 +238,7 @@ export default function ProjectPage() {
               className="contact-button payment"
               onClick={() => setShowPaymentModal(true)}
             >
-              <span>💳</span> Purchase Design
+              <span>💳</span> Request quote
             </button>
           </div>
         </section>

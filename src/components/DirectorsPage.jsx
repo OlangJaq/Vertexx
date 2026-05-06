@@ -40,7 +40,7 @@ export default function DirectorsPage() {
             <div className="director-card">
               <div className="avatar" onClick={() => setShowImageModal(true)} style={{ cursor: 'pointer' }}>
                 {currentDirector.image ? (
-                  <img src={currentDirector.image} alt={currentDirector.name} />
+                  <img src={currentDirector.image} alt={currentDirector.name} loading="lazy" decoding="async" />
                 ) : (
                   currentDirector.initials
                 )}

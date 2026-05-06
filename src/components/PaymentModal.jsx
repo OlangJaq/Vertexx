@@ -2,185 +2,132 @@ import { useState } from "react";
 import { CONTACT } from "../data";
 
 export default function PaymentModal({ project, onClose }) {
-  const [step, setStep] = useState("amount"); // "amount" | "phone" | "processing" | "success" | "error"
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [amount, setAmount] = useState(project.price || 50000);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: `Hello, I am interested in a quote for ${project.title}. Please share the next steps and availability.`,
+  });
+  const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
-  const [transactionRef, setTransactionRef] = useState("");
 
-  const formatPhoneNumber = (value) => {
-    // Convert to Kenyan format (254XXXXXXXXX)
-    let cleaned = value.replace(/\D/g, "");
-    if (cleaned.length === 10 && cleaned.startsWith("7")) {
-      cleaned = "254" + cleaned;
-    } else if (cleaned.length === 12 && cleaned.startsWith("07")) {
-      cleaned = "254" + cleaned.substring(1);
-    }
-    return cleaned;
-  };
-
-  const handlePhoneChange = (e) => {
-    setPhoneNumber(e.target.value);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
     setError("");
   };
 
-  const validatePhoneNumber = () => {
-    const formatted = formatPhoneNumber(phoneNumber);
-    if (!/^254\d{9}$/.test(formatted)) {
-      setError("Please enter a valid Kenyan phone number");
-      return false;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setError("Please complete your name, email, and message to continue.");
+      return;
     }
-    return formatted;
+
+    const subject = `Quote request: ${project.title}`;
+    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nMessage:\n${form.message}`;
+    const mailtoUrl = `mailto:${CONTACT.email1}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+    setStatus("sent");
   };
 
-  const handleInitiatePayment = async (e) => {
-    e.preventDefault();
-    const formatted = validatePhoneNumber();
-    if (!formatted) return;
-
-    // Backend M-Pesa integration coming soon — route to WhatsApp for now
-    const message = encodeURIComponent(
-      `Hello, I'd like to purchase the design files for "${project.title}" (KES ${amount.toLocaleString()}). My M-Pesa number is ${formatted}.`
-    );
-    window.open(`https://wa.me/${CONTACT.whatsapp}?text=${message}`, "_blank");
-    onClose();
-  };
+  const whatsappMessage = encodeURIComponent(
+    `Hello, I am ${form.name || "interested"} and would like a quote for ${project.title}. ${form.message}`
+  );
 
   return (
     <div className="modal-overlay payment-modal-overlay" onClick={onClose}>
       <div className="modal-content payment-modal" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose} aria-label="Close payment modal">
+        <button className="modal-close" onClick={onClose} aria-label="Close quote modal">
           ✕
         </button>
 
-        {step === "amount" && (
-          <form onSubmit={(e) => { e.preventDefault(); setStep("phone"); }}>
-            <h2>Purchase Design Files</h2>
+        {status !== "sent" ? (
+          <form onSubmit={handleSubmit}>
+            <h2>Request a quote</h2>
             <p className="project-title-in-modal">{project.title}</p>
 
             <div className="form-group">
-              <label htmlFor="amount">Payment Amount (KES)</label>
-              <div className="amount-input-group">
-                <input
-                  type="number"
-                  id="amount"
-                  value={amount}
-                  disabled
-                  className="form-input"
-                />
-                <span className="currency">KES</span>
-              </div>
-              <small>Design files will be available for download after payment confirmation</small>
+              <label htmlFor="name">Full name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Your full name"
+                className="form-input"
+                required
+              />
             </div>
-
-            <button type="submit" className="button button-primary full-width">
-              Continue to Payment
-            </button>
-            <button type="button" className="button button-secondary full-width" onClick={onClose}>
-              Cancel
-            </button>
-          </form>
-        )}
-
-        {step === "phone" && (
-          <form onSubmit={handleInitiatePayment}>
-            <h2>Enter Phone Number</h2>
-            <p>We'll send an M-Pesa prompt to this number</p>
 
             <div className="form-group">
-              <label htmlFor="phone">Phone Number</label>
+              <label htmlFor="email">Email address</label>
               <input
-                type="tel"
-                id="phone"
-                placeholder="0707 456 789 or +254 707 456 789"
-                value={phoneNumber}
-                onChange={handlePhoneChange}
-                required
+                id="email"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="you@example.com"
                 className="form-input"
-                autoFocus
+                required
               />
-              <small>Your Kenyan phone number (07XX or 254XXXX format)</small>
             </div>
 
-            <div className="payment-summary">
-              <div className="summary-item">
-                <span>Amount to Pay</span>
-                <strong>KES {amount.toLocaleString()}</strong>
-              </div>
+            <div className="form-group">
+              <label htmlFor="phone">Phone number</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                value={form.phone}
+                onChange={handleChange}
+                placeholder="+254 7XX XXX XXX"
+                className="form-input"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message">Project details</label>
+              <textarea
+                id="message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                rows="5"
+                className="form-input"
+                placeholder="Describe your project, timeline, or site location."
+                required
+              />
             </div>
 
             {error && <div className="error-message">{error}</div>}
 
             <button type="submit" className="button button-primary full-width">
-              Initiate M-Pesa Payment
+              Send enquiry
             </button>
-            <button
-              type="button"
-              className="button button-secondary full-width"
-              onClick={() => setStep("amount")}
-            >
-              ← Back
+            <button type="button" className="button button-secondary full-width" onClick={onClose}>
+              Cancel
             </button>
           </form>
-        )}
-
-        {step === "processing" && (
-          <div className="modal-state">
-            <div className="loading-spinner" />
-            <h2>Processing Payment</h2>
-            <p>Please check your phone for an M-Pesa prompt...</p>
-            <p className="processing-hint">
-              Enter your M-Pesa PIN to complete the transaction
-            </p>
-          </div>
-        )}
-
-        {step === "success" && (
+        ) : (
           <div className="modal-state success">
             <div className="success-icon">✓</div>
-            <h2>Payment Initiated Successfully</h2>
-            <p>You should receive an M-Pesa prompt on your phone shortly.</p>
-            <div className="transaction-info">
-              <div className="info-item">
-                <span>Transaction ID</span>
-                <code>{transactionRef}</code>
-              </div>
-              <div className="info-item">
-                <span>Amount</span>
-                <strong>KES {amount.toLocaleString()}</strong>
-              </div>
-            </div>
-            <p className="success-note">
-              After successful payment, your design files will be available for download.
-              You'll receive a confirmation email at {CONTACT.email1}
-            </p>
+            <h2>Enquiry ready to send</h2>
+            <p>Your inbox will open with the quote request. If you prefer, message us on WhatsApp instead.</p>
+            <a
+              href={`https://wa.me/${CONTACT.whatsapp}?text=${whatsappMessage}`}
+              target="_blank"
+              rel="noreferrer"
+              className="button button-secondary full-width"
+            >
+              Send on WhatsApp
+            </a>
             <button className="button button-primary full-width" onClick={onClose}>
               Close
             </button>
-          </div>
-        )}
-
-        {step === "error" && (
-          <div className="modal-state error">
-            <div className="error-icon">✕</div>
-            <h2>Payment Failed</h2>
-            <p>{error}</p>
-            <div className="error-actions">
-              <button
-                className="button button-primary full-width"
-                onClick={() => setStep("phone")}
-              >
-                Try Again
-              </button>
-              <a
-                href={`https://wa.me/${CONTACT.whatsapp}?text=Hello%2C%20I%20had%20an%20issue%20with%20M-Pesa%20payment%20for%20${encodeURIComponent(project.title)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="button button-secondary full-width"
-              >
-                Contact Support
-              </a>
-            </div>
           </div>
         )}
       </div>
