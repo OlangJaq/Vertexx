@@ -1,12 +1,65 @@
-import image1 from "./assets/images/image_p2_1.jpeg";
-import image2 from "./assets/images/image_p2_2.jpeg";
-import image3 from "./assets/images/image_p3_1.jpeg";
-import image4 from "./assets/images/image_p4_1.jpeg";
-import image5 from "./assets/images/image_p5_1.jpeg";
-import image6 from "./assets/images/image_p6_1.jpeg";
-import image7 from "./assets/images/image_p7_1.jpeg";
-import image8 from "./assets/images/image_p8_1.jpeg";
-import image9 from "./assets/images/image_p9_1.jpeg";
+// Etago Maisonette
+import etago1 from "./assets/images/etago-maisonette/image_p2_1.jpeg";
+import etago2 from "./assets/images/etago-maisonette/image_p2_2.jpeg";
+import etago3 from "./assets/images/etago-maisonette/image_p3_1.jpeg";
+import etago4 from "./assets/images/etago-maisonette/image_p3_2.jpeg";
+import etago5 from "./assets/images/etago-maisonette/image_p3_3.jpeg";
+
+// Joska Bungalow (placeholder)
+import joska1 from "./assets/images/image_p2_1.jpeg";
+
+// Ruiru Apartments
+import ruiru1 from "./assets/images/ruiru-apartments/image_p5_1.jpeg";
+import ruiru2 from "./assets/images/ruiru-apartments/image_p5_2.jpeg";
+import ruiru3 from "./assets/images/ruiru-apartments/image_p5_3.jpeg";
+import ruiru4 from "./assets/images/ruiru-apartments/image_p6_1.jpeg";
+import ruiru5 from "./assets/images/ruiru-apartments/image_p6_2.jpeg";
+
+// Kikuyu Modern House
+import kikuyu1 from "./assets/images/kikuyu-modern-house/image_p7_3.jpeg";
+import kikuyu2 from "./assets/images/kikuyu-modern-house/image_p8_1.jpeg";
+import kikuyu3 from "./assets/images/kikuyu-modern-house/image_p9_4.jpeg";
+import kikuyu4 from "./assets/images/kikuyu-modern-house/image_p9_5.jpeg";
+
+// Ruiru 4-Bed Maisonette
+import ruiru4bed1 from "./assets/images/ruiru-4bed-maisonette/image_p7_1.jpeg";
+import ruiru4bed2 from "./assets/images/ruiru-4bed-maisonette/image_p7_2.jpeg";
+import ruiru4bed3 from "./assets/images/ruiru-4bed-maisonette/image_p8_2.jpeg";
+
+// Lavington Landscaping
+import lavington1 from "./assets/images/lavington-landscaping/image_p10_1.jpeg";
+import lavington2 from "./assets/images/lavington-landscaping/image_p11_1.jpeg";
+import lavington3 from "./assets/images/lavington-landscaping/image_p11_2.jpeg";
+import lavington4 from "./assets/images/lavington-landscaping/image_p11_3.jpeg";
+
+// Karen Duplexes
+import karen1 from "./assets/images/karen-duplexes/image_p14_1.jpeg";
+import karen2 from "./assets/images/karen-duplexes/image_p14_2.jpeg";
+import karen3 from "./assets/images/karen-duplexes/image_p4_1.jpeg";
+import karen4 from "./assets/images/karen-duplexes/image_p4_2.jpeg";
+import karen5 from "./assets/images/karen-duplexes/image_p4_3.jpeg";
+import karen6 from "./assets/images/karen-duplexes/image_p4_4.jpeg";
+
+// Ngoigwa Thika Apartments
+import ngoigwa1 from "./assets/images/ngoigwa-thika-apartments/image_p12_1.jpeg";
+import ngoigwa2 from "./assets/images/ngoigwa-thika-apartments/image_p12_2.jpeg";
+import ngoigwa3 from "./assets/images/ngoigwa-thika-apartments/image_p12_3.jpeg";
+import ngoigwa4 from "./assets/images/ngoigwa-thika-apartments/image_p13_1.jpeg";
+import ngoigwa5 from "./assets/images/ngoigwa-thika-apartments/image_p13_2.jpeg";
+import ngoigwa6 from "./assets/images/ngoigwa-thika-apartments/image_p13_3.jpeg";
+
+// WE-GO Group Interiors
+import wego1 from "./assets/images/wego-group-interiors/image_p16_1.jpeg";
+import wego2 from "./assets/images/wego-group-interiors/image_p16_2.jpeg";
+import wego3 from "./assets/images/wego-group-interiors/image_p16_3.jpeg";
+import wego4 from "./assets/images/wego-group-interiors/image_p16_4.jpeg";
+
+// Homabay Maisonette
+import homabay1 from "./assets/images/homabay-maisonette/image_p14_3.jpeg";
+import homabay2 from "./assets/images/homabay-maisonette/image_p15_1.jpeg";
+import homabay3 from "./assets/images/homabay-maisonette/image_p15_2.jpeg";
+import homabay4 from "./assets/images/homabay-maisonette/image_p15_3.jpeg";
+
 import jackPhoto from "./assets/images/DSC_2753.JPG";
 
 export const CONTACT = {
@@ -30,7 +83,7 @@ export const PROJECTS = [
       "A generously proportioned four-bedroom maisonette embraced by the scenic beauty of Kisii County. Designed for growing families, the home blends comfort and sophistication with a 35° pitch roof, natural stone cladding, steel casement windows, and ceramic tile finishes throughout.",
     longDescription:
       "This four-bedroom maisonette showcases modern residential design principles applied to a scenic Kisii County setting. The project demonstrates excellent spatial planning with clearly defined functional zones. The maisonette features high-quality materials including natural stone cladding, steel casement windows for durability and thermal efficiency, and ceramic tiles throughout. Special attention was paid to ventilation and light, with the 35° pitch roof providing both weather protection and visual character. Each bedroom is generously proportioned, and the common areas feature open-plan living that extends to a well-landscaped exterior space.",
-    image: image1,
+    image: etago1,
     price: 1500000,
     currency: "KES",
     specifications: {
@@ -42,7 +95,7 @@ export const PROJECTS = [
       materials: ["Natural stone cladding", "Steel casement windows", "Ceramic tiles"],
     },
     amenities: ["Open-plan living", "Master suite", "Guest bedroom", "Landscaped grounds"],
-    images: [image1],
+    images: [etago1, etago2, etago3, etago4, etago5],
   },
   {
     id: 2,
@@ -56,7 +109,7 @@ export const PROJECTS = [
       "A meticulously designed three-bedroom bungalow nestled in the serene locality of Joska along Kangundo Road. The contemporary design features a carport, gazebo, open-plan living spaces, breakfast area, and lush landscaped surroundings — a peaceful retreat without compromising on style and functionality.",
     longDescription:
       "Located in the tranquil Joska neighborhood, this three-bedroom bungalow represents precision in contemporary residential design. The property features thoughtfully integrated outdoor spaces including a dedicated carport and decorative gazebo, enhancing both utility and aesthetic appeal. The open-plan living concept connects the lounge, dining, and kitchen areas seamlessly, promoting natural flow and social interaction. A dedicated breakfast area provides additional dining flexibility. Landscaping was carefully planned to create privacy while maintaining the home's visual connection to its natural surroundings.",
-    image: image2,
+    image: joska1,
     price: 1800000,
     currency: "KES",
     specifications: {
@@ -68,7 +121,7 @@ export const PROJECTS = [
       gazebo: "Yes",
     },
     amenities: ["Carport", "Gazebo", "Open-plan living", "Breakfast area", "Landscaped grounds"],
-    images: [image2],
+    images: [joska1],
   },
   {
     id: 3,
@@ -82,7 +135,7 @@ export const PROJECTS = [
       "A multi-storey apartment complex fusing contemporary design with practical utility. The facade features clean lines and expansive windows for abundant natural light. One- and two-bedroom units are thoughtfully configured for spatial efficiency, with private balconies, designated parking, underground water tanks, and solar panels on the roof terrace.",
     longDescription:
       "This multi-storey apartments project exemplifies modern urban residential design. The complex accommodates a mix of one- and two-bedroom units, optimizing for both affordability and comfort. The contemporary facade with clean lines and expansive glazing creates a visually striking presence while maximizing natural illumination within units. Each unit includes private balconies for outdoor space and privacy. Building infrastructure includes underground water storage ensuring reliable supply, solar panels for energy efficiency, and designated parking spaces for residents. The rooftop terrace serves as a communal space with panoramic views.",
-    image: image3,
+    image: ruiru1,
     price: 950000,
     currency: "KES",
     specifications: {
@@ -94,7 +147,7 @@ export const PROJECTS = [
       solarCapacity: "10kWp",
     },
     amenities: ["Private balconies", "Parking", "Water tanks", "Solar panels", "Communal rooftop"],
-    images: [image3],
+    images: [ruiru1, ruiru2, ruiru3, ruiru4, ruiru5],
   },
   {
     id: 4,
@@ -108,7 +161,7 @@ export const PROJECTS = [
       "A five-bedroom modern-style maisonette with a focus on contemporary design and functionality. Clean lines, expansive glass windows, and a minimalist colour palette create a harmonious connection with the natural surroundings. The open floor plan promotes a communal atmosphere with a modern kitchen at its heart.",
     longDescription:
       "This modern five-bedroom maisonette in Kikuyu showcases minimalist architectural principles adapted to residential living. Every design element serves both aesthetic and functional purposes. The façade is characterized by clean lines and substantial glazing, flooding the interior with natural light. The open floor plan on the ground level creates fluid spaces for living, dining, and kitchen use, with the kitchen positioned as the functional and social hub. The modern kitchen incorporates contemporary appliances and efficient layouts. Upper floors house the sleeping quarters, including a luxurious master suite with ensuite facilities.",
-    image: image4,
+    image: kikuyu1,
     price: 2200000,
     currency: "KES",
     specifications: {
@@ -119,7 +172,7 @@ export const PROJECTS = [
       storeys: 3,
     },
     amenities: ["Modern kitchen", "Open-plan living", "Master suite", "Multiple balconies"],
-    images: [image4],
+    images: [kikuyu1, kikuyu2, kikuyu3, kikuyu4],
   },
   {
     id: 5,
@@ -133,7 +186,7 @@ export const PROJECTS = [
       "A four-bedroom modern-style maisonette that seamlessly blends architectural innovation with comfort. Clean lines, expansive windows, and a sleek stone-clad façade welcome natural light into every corner. The open-plan ground floor connects lounge, dining, kitchen, and guest bedroom effortlessly, while the upper floor houses the master suite, theatre room, and office.",
     longDescription:
       "This Ruiru maisonette represents a thoughtful blend of modern aesthetics with practical residential requirements. The stone-clad façade provides both visual interest and durability. Expansive windows throughout maximize daylighting and create visual connection to outdoor spaces. The ground floor features an open-plan configuration connecting the main living areas, with a guest bedroom providing accommodation flexibility. The upper floor is dedicated to private sleeping and working spaces, including a dedicated theatre room and home office — ideal for contemporary work-from-home lifestyles. The master suite is a private retreat with luxurious ensuite facilities.",
-    image: image5,
+    image: ruiru4bed1,
     price: 1950000,
     currency: "KES",
     specifications: {
@@ -145,7 +198,7 @@ export const PROJECTS = [
       specialRooms: ["Theatre room", "Home office"],
     },
     amenities: ["Theatre room", "Home office", "Master suite", "Guest bedroom", "Open-plan living"],
-    images: [image5],
+    images: [ruiru4bed1, ruiru4bed2, ruiru4bed3],
   },
   {
     id: 6,
@@ -159,7 +212,7 @@ export const PROJECTS = [
       "A comprehensive landscaping masterplan for a mixed-use compound in Lavington, blending natural beauty with functional outdoor spaces. The design integrates royal palms, marigold borders, Kikuyu grass lawns, golden duranta hedges, covered VIP parking, and a swimming pool — seamlessly connecting the site to the surrounding urban fabric.",
     longDescription:
       "This comprehensive landscaping project transformed a commercial compound into an integrated, aesthetically pleasing environment. The masterplan incorporated diverse planting schemes featuring tropical and temperate species carefully selected for the Nairobi climate. Royal palms create vertical accents and provide shade, while Kikuyu grass forms resilient lawn areas. Marigold borders add color and definition, while golden duranta hedges create natural screening and visual interest. Functional elements including a swimming pool, covered VIP parking, and circulation paths were seamlessly integrated. The overall design creates distinct zones within the compound while maintaining visual flow.",
-    image: image6,
+    image: lavington1,
     price: 350000,
     currency: "KES",
     specifications: {
@@ -169,7 +222,7 @@ export const PROJECTS = [
       parkingSpaces: "20 covered",
     },
     amenities: ["Swimming pool", "Covered parking", "Lawn areas", "Planting borders", "Irrigation system"],
-    images: [image6],
+    images: [lavington1, lavington2, lavington3, lavington4],
   },
   {
     id: 7,
@@ -183,7 +236,7 @@ export const PROJECTS = [
       "Elegant four-bedroom duplexes in Karen featuring a sunken lounge, island kitchen with pantry and breakfast area, and a dedicated laundry wing on the ground floor. The upper level accommodates a master suite with walk-in closet and balcony, family room, girls' and boys' rooms — all under a signature 35° pitch red-tile roof.",
     longDescription:
       "These elegant Karen duplexes represent luxury residential design at its finest. Each unit is meticulously planned with distinct zones for different family activities. The ground floor features a sunken lounge creating spatial drama and intimacy, complemented by an island kitchen — the heart of the home — with dedicated pantry and breakfast area. A separate laundry wing maintains the pristine living spaces. The upper floor is dedicated to sleeping quarters with a luxurious master suite featuring walk-in closet and private balcony. Additional bedrooms for children are thoughtfully positioned with adequate privacy. The signature 35° pitch red-tile roof provides both heritage charm and weather protection.",
-    image: image7,
+    image: karen1,
     price: 2100000,
     currency: "KES",
     specifications: {
@@ -194,7 +247,7 @@ export const PROJECTS = [
       specialFeatures: ["Sunken lounge", "Island kitchen", "Laundry wing"],
     },
     amenities: ["Island kitchen", "Sunken lounge", "Master suite", "Walk-in closet", "Laundry wing"],
-    images: [image7],
+    images: [karen1, karen2, karen3, karen4, karen5, karen6],
   },
   {
     id: 8,
@@ -208,7 +261,7 @@ export const PROJECTS = [
       "A five-storey residential development — 'Comfort Heights' — nestled in the heart of Thika. The layout maximises natural light and ventilation across bedsitter, one-, and two-bedroom units, promoting energy efficiency and a connection to the outdoors. Stone cladding, hanging lines, and a contemporary façade integrate modern living with the cultural context of its surroundings.",
     longDescription:
       "Comfort Heights represents a thoughtful approach to mid-rise residential development. The five-storey building accommodates diverse housing needs with bedsitter, one-bedroom, and two-bedroom units. Design prioritizes natural ventilation and daylighting, reducing reliance on artificial systems and promoting resident health and comfort. The stone-clad façade with hanging lines creates visual texture and ties to local architectural traditions while maintaining a contemporary aesthetic. Each unit type is optimized for efficient space use without sacrificing comfort. Ground-floor commercial spaces provide community amenities and revenue generation.",
-    image: image8,
+    image: ngoigwa1,
     price: 650000,
     currency: "KES",
     specifications: {
@@ -218,7 +271,7 @@ export const PROJECTS = [
       groundFloor: "Commercial spaces",
     },
     amenities: ["Multiple unit types", "Natural ventilation", "Commercial spaces"],
-    images: [image8],
+    images: [ngoigwa1, ngoigwa2, ngoigwa3, ngoigwa4, ngoigwa5, ngoigwa6],
   },
   {
     id: 9,
@@ -232,7 +285,7 @@ export const PROJECTS = [
       "Corporate interior design for the WE-GO Group showroom and offices in Kisii Town. The scheme encapsulates a harmonious blend of functionality, aesthetics, and corporate identity — with a custom branded reception desk, MDF display shelving, thoughtful space planning for workflow efficiency, and a colour palette aligned to the brand's vision.",
     longDescription:
       "This corporate interior design project for WE-GO Group showcases professional interior architecture applied to commercial showroom and office spaces. The design strategy aligned with the corporate brand identity, creating spaces that communicate professionalism and quality. Custom-fabricated reception desk acts as a branded focal point and establishes first impressions. Strategic space planning optimizes workflow efficiency while maintaining client interaction areas. MDF display shelving is configured to showcase products while maintaining visual hierarchy. The color palette was carefully selected to reflect brand values and create a cohesive visual identity throughout the spaces.",
-    image: image9,
+    image: wego1,
     price: 250000,
     currency: "KES",
     specifications: {
@@ -241,7 +294,7 @@ export const PROJECTS = [
       displayShelving: "Yes",
     },
     amenities: ["Reception desk", "Display areas", "Office spaces", "Showroom layout"],
-    images: [image9],
+    images: [wego1, wego2, wego3, wego4],
   },
   {
     id: 10,
@@ -255,7 +308,7 @@ export const PROJECTS = [
       "A contemporary four-bedroom maisonette featuring open-plan living spaces, natural ventilation strategy, and locally sourced finishes tailored to the lakeside climate.",
     longDescription:
       "This Homabay maisonette demonstrates climate-responsive design adapted to lakeside conditions. The architectural strategy prioritizes natural ventilation to manage the humid lakeside environment. Locally sourced materials were selected for both cultural appropriateness and supply chain efficiency. Open-plan spaces encourage air circulation and create flexible living arrangements. The design respects local building traditions while incorporating contemporary comfort standards.",
-    image: "",
+    image: homabay1,
     price: 1400000,
     currency: "KES",
     specifications: {
@@ -265,7 +318,7 @@ export const PROJECTS = [
       localMaterials: "Yes",
     },
     amenities: ["Open-plan living", "Natural ventilation", "Local finishes"],
-    images: [],
+    images: [homabay1, homabay2, homabay3, homabay4],
   },
   {
     id: 11,
