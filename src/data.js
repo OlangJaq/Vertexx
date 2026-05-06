@@ -12,8 +12,8 @@ import jackPhoto from "./assets/images/DSC_2753.JPG";
 export const CONTACT = {
   whatsapp: "254706906566",
   whatsappDisplay: "+254 706 906 566",
-  email1: "olangjack@gmail.com",
-  email2: "olangjack@yahoo.com",
+  email1: "vertexdeltagroup@gmail.com",
+  email2: "vertexdeltagroup@gmail.com",
   location: "Nairobi, Kenya",
 };
 
