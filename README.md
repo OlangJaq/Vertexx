@@ -1,97 +1,26 @@
-# Vertex Delta Group - Portfolio Website
+# Vertex Delta Group
 
-Modern real estate portfolio website built with React, Vite, and deployed on Vercel.
+Welcome to Vertex Delta Group's portfolio website. We are a leading real estate development company based in **Nairobi, Kenya**, specializing in innovative residential and commercial projects.
 
-## 🚀 Quick Start
+## About Us
 
-### Prerequisites
-- Node.js v16+
-- npm or yarn
-- Vercel account (deployment)
+Vertex Delta Group is committed to delivering high-quality construction and development projects that combine modern design with practical functionality. Our portfolio showcases a diverse range of completed and ongoing projects across the Nairobi metropolitan area and beyond.
 
-### Installation & Development
+## What We Do
 
-```bash
-# Install dependencies
-npm install
+- **Residential Development** - Maisonettes, bungalows, apartments, and modern homes
+- **Landscaping & Design** - Professional landscaping and interior design services
+- **Commercial Projects** - Commercial spaces and mixed-use developments
+- **Quality Construction** - Building excellence with attention to detail
 
-# Start development server
-npm run dev
+## Contact Us
 
-# Build for production
-npm run build
+📧 **Email:** vertexdeltagroup@gmail.com  
+📱 **WhatsApp:** +254 739 704 350  
+📍 **Location:** Nairobi, Kenya
 
-# Preview production build
-npm run preview
-```
+Have a project in mind? Get in touch with our team today to discuss your next development opportunity.
 
-## 📁 Project Structure
+---
 
-```
-src/
-├── components/           # React components
-│   ├── HomePage.jsx
-│   ├── ProjectPage.jsx
-│   ├── DirectorsPage.jsx
-│   ├── Header.jsx
-│   ├── ContactForm.jsx
-│   └── ImageSlideshow.jsx
-├── assets/images/        # Project photos organized by folder
-├── data.js              # Centralized data (projects, contact, directors)
-├── App.jsx              # Main app component
-├── styles.css           # Global styles
-└── main.jsx             # React entry point
-```
-
-## 📧 Contact Information
-
-**Company:** Vertex Delta Group  
-**Email:** vertexdeltagroup@gmail.com  
-**Phone:** +254 739 704 350 (WhatsApp)  
-**Location:** Nairobi, Kenya
-
-## 🎨 Features
-
-- ✅ Responsive design with modern CSS
-- ✅ Project gallery with image slideshows (3-6 images per project)
-- ✅ Contact form with email integration
-- ✅ SEO optimized (meta tags, Open Graph, Twitter Card)
-- ✅ Lazy loading for performance
-- ✅ Directors/team page with profiles
-- ✅ Testimonials section
-
-## 📸 Adding Project Photos
-
-Project photos are organized in `src/assets/images/` by project folder:
-- `etago-maisonette/`
-- `joska-bungalow/`
-- `ruiru-apartments/`
-- `kikuyu-modern-house/`
-- `ruiru-4bed-maisonette/`
-- `lavington-landscaping/`
-- `karen-duplexes/`
-- `ngoigwa-thika-apartments/`
-- `wego-group-interiors/`
-- `homabay-maisonette/`
-
-Photos are automatically loaded into the slideshow. Update `src/data.js` to add image references.
-
-## 🚀 Deployment
-
-Deployed automatically on Vercel. Push to `main` branch to trigger deployment.
-
-```bash
-git push origin main
-```
-
-## 📦 Dependencies
-
-- **React** - UI library
-- **React Router** - Client-side routing
-- **Vite** - Build tool
-- **CSS** - Styling (no external CSS framework)
-
-## 📄 License
-
-All rights reserved © Vertex Delta Group
-
+© 2026 Vertex Delta Group. All rights reserved.
